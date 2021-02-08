@@ -1,6 +1,6 @@
 {
   "name": "dc-deploy",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "main": "index.js",
   "author": "",
@@ -10,7 +10,7 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Ken-ding/dc-deploy.git"
-},
+  },
   "keywords": [],
   "license": "ISC",
   "dependencies": {
