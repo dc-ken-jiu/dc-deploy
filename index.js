@@ -2,7 +2,7 @@
  * @Description: 
  * @Author: dingxuejin
  * @Date: 2021-02-08 20:38:14
- * @LastEditTime: 2021-02-08 20:47:14
+ * @LastEditTime: 2021-03-09 09:16:05
  * @LastEditors: dingxuejin
  */
 const shell = require("shelljs");
@@ -170,8 +170,8 @@ async function restartCon(config) {
 
 //步骤八,创建新容器
 async function creatCon(config) {
-    const { webDir, webRootDir, containName } = config;
-    const command = `docker run --name ${containName} -d -p 8090:80 -v ${webDir}:/usr/share/nginx/html -v ${webRootDir}/conf/nginx.conf:/etc/nginx/nginx.conf -v ${webRootDir}/conf.d:/etc/nginx/conf.d -v ${webRootDir}/logs:/var/log/nginx nginx`;
+    const { webDir, webRootDir, containName, exportPort } = config;
+    const command = `docker run --name ${containName} -d -p ${exportPort}:80 -v ${webDir}:/usr/share/nginx/html -v ${webRootDir}/conf/nginx.conf:/etc/nginx/nginx.conf -v ${webRootDir}/conf.d:/etc/nginx/conf.d -v ${webRootDir}/logs:/var/log/nginx nginx`;
     try {
         console.log("创建容器");
         await runCommand(command, webDir);
